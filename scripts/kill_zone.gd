@@ -4,13 +4,13 @@ extends Area2D
 @onready var fade: Fade = $Fade
 
 const SPIN_DURATION = 0.6  # durée d'un tour complet (en secondes)
-
+const JUMP_POWER = -300
 var triggered = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if triggered:
 		return
-	triggered = true
+	triggered = true	
 	fade.animation_player.play("fade_in")
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()

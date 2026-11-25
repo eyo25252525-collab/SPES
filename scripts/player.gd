@@ -66,9 +66,9 @@ func _physics_process(delta: float) -> void:
 		dash_particles.emitting = false
 		roll_particles.emitting = true
 		animated_sprite_2d.play("roll")
-		velocity.y = VERTICAL_ROLL_VELOCITY
 		var dash_dir = -1 if animated_sprite_2d.flip_h else 1
-		velocity.x = dash_dir * HORIZONTAL_ROLL_VELOCITY
+		velocity.x = dash_dir * HORIZONTAL_ROLL_VELOCITY		
+		velocity.y = VERTICAL_ROLL_VELOCITY
 	else:
 		dash_particles.emitting = false
 		roll_particles.emitting = false

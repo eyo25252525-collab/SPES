@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bjqf5hfmnplsg" path="res://scenes/kill_zone.tscn" id="2_7a7y0"]
 
 [node name="Spike" type="Sprite2D" unique_id=495335439]
+position = Vector2(8, 9)
+scale = Vector2(0.5, 0.4375)
 texture = ExtResource("1_ljd5v")
 
 [node name="KillZone" parent="." unique_id=1269390713 instance=ExtResource("2_7a7y0")]

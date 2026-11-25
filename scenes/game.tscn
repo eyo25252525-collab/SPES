@@ -49,6 +49,11 @@ zoom = Vector2(5, 5)
 limit_bottom = 40
 limit_smoothed = true
 position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.6
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=621713518]
 tile_set = SubResource("TileSet_8llua")
@@ -67,5 +72,58 @@ script = SubResource("GDScript_lnu2h")
 shape = SubResource("WorldBoundaryShape2D_1vivr")
 
 [node name="Spike" parent="." unique_id=495335439 instance=ExtResource("5_iywne")]
-position = Vector2(152, -20.5)
-scale = Vector2(0.375, 0.34375)
+position = Vector2(135, -23)
+
+[node name="Spike2" parent="." unique_id=1832331346 instance=ExtResource("5_iywne")]
+position = Vector2(147, -23)
+
+[node name="Spike3" parent="." unique_id=1978637608 instance=ExtResource("5_iywne")]
+position = Vector2(159, -23)
+
+[node name="Spike5" parent="." unique_id=296419802 instance=ExtResource("5_iywne")]
+position = Vector2(405, -7)
+
+[node name="Spike6" parent="." unique_id=377545069 instance=ExtResource("5_iywne")]
+position = Vector2(417, -7)
+
+[node name="Spike7" parent="." unique_id=1144384295 instance=ExtResource("5_iywne")]
+position = Vector2(429, -7)
+
+[node name="Spike8" parent="." unique_id=2143721010 instance=ExtResource("5_iywne")]
+position = Vector2(441, -7)
+
+[node name="Spike9" parent="." unique_id=1917464754 instance=ExtResource("5_iywne")]
+position = Vector2(453, -7)
+
+[node name="Spike10" parent="." unique_id=1677661526 instance=ExtResource("5_iywne")]
+position = Vector2(465, -7)
+
+[node name="Spike11" parent="." unique_id=587353398 instance=ExtResource("5_iywne")]
+position = Vector2(477, -7)
+
+[node name="Spike12" parent="." unique_id=1839925389 instance=ExtResource("5_iywne")]
+position = Vector2(489, -7)
+
+[node name="Spike13" parent="." unique_id=1529167141 instance=ExtResource("5_iywne")]
+position = Vector2(501, -7)
+
+[node name="Spike14" parent="." unique_id=1140792731 instance=ExtResource("5_iywne")]
+position = Vector2(513, -7)
+
+[node name="Spike15" parent="." unique_id=476372460 instance=ExtResource("5_iywne")]
+position = Vector2(525, -7)
+
+[node name="Spike16" parent="." unique_id=543136263 instance=ExtResource("5_iywne")]
+position = Vector2(536, -7)
+
+[node name="Spike17" parent="." unique_id=1619774667 instance=ExtResource("5_iywne")]
+position = Vector2(548, -7)
+
+[node name="Spike18" parent="." unique_id=1876603447 instance=ExtResource("5_iywne")]
+position = Vector2(560, -7)
+
+[node name="Spike19" parent="." unique_id=1668145709 instance=ExtResource("5_iywne")]
+position = Vector2(572, -7)
+
+[node name="Spike20" parent="." unique_id=937907127 instance=ExtResource("5_iywne")]
+position = Vector2(584, -7)
