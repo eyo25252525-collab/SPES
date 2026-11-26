@@ -1,3 +1,7 @@
+res://scenes/player.tscn
+res://shader/fade.gdshader
 res://scripts/kill_zone.gd
 res://scenes/game.tscn
-res://shader/fade.gdshader
+res://scripts/star.gd
+res://scenes/star.tscn
+res://scripts/player.gd

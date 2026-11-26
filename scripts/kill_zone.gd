@@ -7,14 +7,14 @@ const SPIN_DURATION = 0.6  # durée d'un tour complet (en secondes)
 const JUMP_POWER = -300
 var triggered = false
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	if triggered:
 		return
 	triggered = true	
 	fade.animation_player.play("fade_in")
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
-
+	body.velocity.y = JUMP_POWER
 	# Rotation infinie du body
 	var tween := body.create_tween().set_loops()
 	tween.tween_property(body, "rotation", TAU, SPIN_DURATION).as_relative()
