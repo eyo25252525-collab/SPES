@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bxfv3bar04ujw"]
+
+[ext_resource type="Texture2D" uid="uid://dh2rjgpj7fcas" path="res://assets/Stars/NormalStar.png" id="1_mcqwg"]
+[ext_resource type="Script" uid="uid://dwdnk3vdm4gmr" path="res://scripts/star.gd" id="2_j6vao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 7.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j6vao"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(3, 1, 1)
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, 20, 0)
+scale_max = 2.0
+color = Color(1, 0.8352941, 0.25490198, 1)
+hue_variation_min = 0.089999974
+hue_variation_max = 0.089999974
+
+[node name="Star" type="Sprite2D" unique_id=1229019663]
+texture = ExtResource("1_mcqwg")
+script = ExtResource("2_j6vao")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1389467023]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=936433441]
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="StarParticles" type="GPUParticles2D" parent="." unique_id=653409332]
+visible = false
+z_index = -1
+scale = Vector2(2.5599997, 1)
+amount = 24
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_j6vao")

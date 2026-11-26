@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://d2mcwhgtdg1bo"]
+
+[ext_resource type="Script" uid="uid://t02j46g0i6i6" path="res://scripts/fade_out.gd" id="1_76d3x"]
+[ext_resource type="Shader" uid="uid://bcx1spbr8sden" path="res://shader/fade.gdshader" id="1_nukjo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8vrlf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1vivr"]
+noise = SubResource("FastNoiseLite_8vrlf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nukjo"]
+shader = ExtResource("1_nukjo")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1vivr")
+shader_parameter/transition_color = Color(0, 0, 0, 1)
+shader_parameter/progress = 0.0
+shader_parameter/max_pixel_size = 10.30800039463
+shader_parameter/smoothness = 0.00999999977648
+
+[sub_resource type="Animation" id="Animation_nukjo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_76d3x"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_85vtu"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmn2j"]
+_data = {
+&"RESET": SubResource("Animation_nukjo"),
+&"fade_in": SubResource("Animation_76d3x"),
+&"fade_out": SubResource("Animation_85vtu")
+}
+
+[node name="Fade" type="CanvasLayer" unique_id=827767132]
+script = ExtResource("1_76d3x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=356199095]
+material = SubResource("ShaderMaterial_nukjo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=889060198]
+libraries/ = SubResource("AnimationLibrary_vmn2j")
+autoplay = &"fade_out"
